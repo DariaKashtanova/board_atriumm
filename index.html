@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Видео плеер</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .player {
+            max-width: 90%;
+            width: 1000px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+        }
+        
+        video {
+            width: 100%;
+            border-radius: 10px;
+        }
+        
+        .controls {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        button {
+            background: #ff4444;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        button:hover {
+            background: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <div class="player">
+        <video controls autoplay>
+            <source src="видео доска.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео
+        </video>
+        <div class="controls">
+            <button onclick="document.querySelector('video').play()">▶ Воспроизвести</button>
+            <button onclick="document.querySelector('video').pause()">⏸ Пауза</button>
+            <button onclick="document.querySelector('video').volume += 0.1">🔊 Громче</button>
+            <button onclick="document.querySelector('video').volume -= 0.1">🔉 Тише</button>
+            <button onclick="document.querySelector('video').load(); document.querySelector('video').play()">🔄 Повтор</button>
+        </div>
+    </div>
+</body>
+</html>
